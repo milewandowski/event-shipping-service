@@ -11,9 +11,10 @@ public final class ShippingService {
 
     private final StatusPublisher statusPublisher;
     private final ShipmentPublisher shipmentPublisher;
+    private final ProductService productService;
 
     public void create(Order order) {
-        shipmentPublisher.send(order);
+        shipmentPublisher.send(order, productService.getProductsByIds(order.getProductIds()));
         order.setStatus(Status.SENT);
         statusPublisher.send(order);
     }

@@ -1,5 +1,6 @@
 package com.lewandowski.eventshippingservice.shipping.adapter.shipmentpublisher;
 
+import com.lewandowski.eventshippingservice.shipping.domain.model.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,5 +19,5 @@ class Shipment {
     String postalCode;
     String city;
     String address;
-    List<String> productIds;
+    List<Product> products;
 }

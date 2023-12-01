@@ -1,3 +1,9 @@
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 4.4.0
+
 spring:
   kafka:
     bootstrap-servers: 127.0.0.1:9092
