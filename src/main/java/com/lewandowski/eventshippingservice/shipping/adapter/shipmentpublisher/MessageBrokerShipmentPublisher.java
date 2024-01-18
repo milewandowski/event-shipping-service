@@ -21,7 +21,7 @@ class MessageBrokerShipmentPublisher implements ShipmentPublisher {
     @Override
     public void send(Order order, List<Product> products) {
         Shipment shipment = orderToShipment.map(order, products);
-        kafkaTemplate.send("shipment-local", shipment);
+        kafkaTemplate.send("shipment-company", shipment);
         log.info("Shipment sent: {}", shipment);
     }
 }

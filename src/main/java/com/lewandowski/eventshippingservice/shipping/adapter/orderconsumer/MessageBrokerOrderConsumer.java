@@ -15,7 +15,7 @@ class MessageBrokerOrderConsumer {
 
     private final ShippingService shippingService;
 
-    @KafkaListener(topics = "order-payment-local2", groupId = "shipping-service", properties = {
+    @KafkaListener(topics = "order-payment-done-topic", groupId = "shipping-service", properties = {
             "spring.json.value.default.type=com.lewandowski.eventshippingservice.shipping.domain.model.Order"})
     public void consume(@Payload Order order) {
         log.info("Order event received: {}", order);

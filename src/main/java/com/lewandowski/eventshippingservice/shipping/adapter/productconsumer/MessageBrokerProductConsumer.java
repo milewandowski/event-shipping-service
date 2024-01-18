@@ -15,7 +15,7 @@ class MessageBrokerProductConsumer {
 
     private final ProductService productService;
 
-    @KafkaListener(topics = "product-local", groupId = "shipping-service", properties = {
+    @KafkaListener(topics = "product-change-topic", groupId = "shipping-service", properties = {
             "spring.json.value.default.type=com.lewandowski.eventshippingservice.shipping.domain.model.Product"})
     public void consume(@Payload Product product) {
         log.info("Product event received: {}", product);
